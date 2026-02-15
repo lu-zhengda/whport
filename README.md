@@ -61,6 +61,10 @@ Launch `whport` without arguments for an interactive port dashboard. Browse list
 - **Default is SIGTERM** — allows graceful shutdown; use `--force` (SIGKILL) only as a last resort
 - **Verify after kill** — run `whport list --port <n>` to confirm the port is freed
 
+## Claude Code
+
+Available as a skill in the [macos-toolkit](https://github.com/lu-zhengda/macos-toolkit) Claude Code plugin. Ask Claude "what's on port 8080?" and it runs whport automatically.
+
 ## License
 
 [MIT](LICENSE)
