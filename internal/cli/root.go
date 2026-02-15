@@ -5,10 +5,10 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/spf13/cobra"
 	"github.com/lu-zhengda/whport/internal/port"
 	"github.com/lu-zhengda/whport/internal/process"
 	"github.com/lu-zhengda/whport/internal/tui"
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -65,4 +65,5 @@ func init() {
 	rootCmd.AddCommand(killCmd)
 	rootCmd.AddCommand(infoCmd)
 	rootCmd.AddCommand(watchCmd)
+	rootCmd.AddCommand(historyCmd)
 }
