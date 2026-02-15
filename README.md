@@ -17,24 +17,21 @@ brew install whport
 
 ```
 $ whport list
-PORT   PID    PROCESS        USER      PROTOCOL
-22     1      launchd        root      tcp
-80     421    httpd          _www      tcp
-3000   12345  node           zhengda   tcp
-5432   8901   postgres       zhengda   tcp
-8080   23456  java           zhengda   tcp
+PORT   PROTO  PID    PROCESS    USER    STATE
+5000   TCP    644    ControlCe  user    LISTEN
+7000   TCP    644    ControlCe  user    LISTEN
+7265   TCP    76742  Raycast    user    LISTEN
+26443  TCP    87971  OrbStack   user    LISTEN
 
-$ whport info 3000
-Port:     3000/tcp
-Process:  node (PID 12345)
-User:     zhengda
-CPU:      2.1%
-Memory:   148.3 MB
-Command:  node server.js
-Children: 3 worker processes
-
-$ whport kill 3000
-Killed process node (PID 12345) on port 3000
+$ whport info 5000
+Port:        5000/TCP
+State:       LISTEN
+Process:     ControlCe (PID 644)
+Command:     /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter
+User:        user
+CPU:         0.0%
+Memory:      116.0 MB (RSS)
+Parent PID:  1
 ```
 
 ## Commands
