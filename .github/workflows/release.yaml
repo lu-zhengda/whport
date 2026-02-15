@@ -23,6 +23,13 @@ jobs:
       - name: Run tests
         run: go test -race ./...
 
+      - name: Generate completions
+        run: |
+          mkdir -p completions
+          go run ./cmd/whport --generate-completion bash > completions/whport.bash
+          go run ./cmd/whport --generate-completion zsh > completions/whport.zsh
+          go run ./cmd/whport --generate-completion fish > completions/whport.fish
+
       - uses: goreleaser/goreleaser-action@v6
         with:
           version: "~> v2"

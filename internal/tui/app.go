@@ -12,8 +12,8 @@ import (
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/zhengda-lu/whport/internal/port"
-	"github.com/zhengda-lu/whport/internal/process"
+	"github.com/lu-zhengda/whport/internal/port"
+	"github.com/lu-zhengda/whport/internal/process"
 )
 
 // viewState tracks which screen the TUI is currently showing.

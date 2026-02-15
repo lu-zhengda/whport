@@ -2,12 +2,13 @@ package cli
 
 import (
 	"fmt"
+	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/spf13/cobra"
-	"github.com/zhengda-lu/whport/internal/port"
-	"github.com/zhengda-lu/whport/internal/process"
-	"github.com/zhengda-lu/whport/internal/tui"
+	"github.com/lu-zhengda/whport/internal/port"
+	"github.com/lu-zhengda/whport/internal/process"
+	"github.com/lu-zhengda/whport/internal/tui"
 )
 
 var (
@@ -26,6 +27,18 @@ lets you kill them, and provides a live TUI dashboard.
 Launch without subcommands for interactive TUI mode.`,
 	Version: version,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		if shell, _ := cmd.Flags().GetString("generate-completion"); shell != "" {
+			switch shell {
+			case "bash":
+				return cmd.Root().GenBashCompletion(os.Stdout)
+			case "zsh":
+				return cmd.Root().GenZshCompletion(os.Stdout)
+			case "fish":
+				return cmd.Root().GenFishCompletion(os.Stdout, true)
+			default:
+				return fmt.Errorf("unsupported shell: %s (use bash, zsh, or fish)", shell)
+			}
+		}
 		runner := &port.RealCmdRunner{}
 		scanner := port.NewLsofScanner(runner)
 		manager := process.NewRealManager(runner)
@@ -44,6 +57,8 @@ func Execute() error {
 func init() {
 	rootCmd.SetVersionTemplate(fmt.Sprintf("whport %s\n", version))
 	rootCmd.CompletionOptions.DisableDefaultCmd = true
+	rootCmd.Flags().String("generate-completion", "", "Generate shell completion (bash, zsh, fish)")
+	rootCmd.Flags().MarkHidden("generate-completion")
 	rootCmd.PersistentFlags().BoolVar(&jsonOutput, "json", false, "Output in JSON format")
 
 	rootCmd.AddCommand(listCmd)

@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/zhengda-lu/whport/internal/port"
+	"github.com/lu-zhengda/whport/internal/port"
 )
 
 // protectedPIDs lists PIDs that should never be killed.

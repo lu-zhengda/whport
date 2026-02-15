@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/zhengda-lu/whport/internal/port"
-	"github.com/zhengda-lu/whport/internal/process"
+	"github.com/lu-zhengda/whport/internal/port"
+	"github.com/lu-zhengda/whport/internal/process"
 )
 
 var infoCmd = &cobra.Command{

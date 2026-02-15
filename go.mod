@@ -1,4 +1,4 @@
-module github.com/zhengda-lu/whport
+module github.com/lu-zhengda/whport
 
 go 1.25.0
 

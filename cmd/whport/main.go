@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/zhengda-lu/whport/internal/cli"
+	"github.com/lu-zhengda/whport/internal/cli"
 )
 
 func main() {

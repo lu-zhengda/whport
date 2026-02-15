@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zhengda-lu/whport/internal/port"
+	"github.com/lu-zhengda/whport/internal/port"
 )
 
 // ProcessInfo holds detailed information about a running process.
