@@ -1,0 +1,9 @@
+# Binary (root only, not cmd/whport/)
+/whport
+bin/
+
+# GoReleaser
+dist/
+
+# macOS
+.DS_Store
