@@ -1,5 +1,20 @@
 # whport
 
+> ⚠️ **Deprecated — no longer actively maintained.**
+>
+> Port and process workflows are moving to [`pstop`](https://github.com/lu-zhengda/pstop):
+>
+> | whport workflow | pstop equivalent | Status |
+> |-----------------|-----------------|--------|
+> | `whport list` | `pstop list` (all processes, no port-first filter) | Partial — PID-centric, not port-centric |
+> | `whport info <port>` | `pstop find <name>` → `pstop info <pid>` (shows ports) | Partial — requires PID lookup first |
+> | `whport kill <port>` | Port-first kill by port number | **Pending** — not yet in pstop |
+> | `whport watch` | `pstop watch <pid>` or TUI | Partial |
+>
+> `whport` continues to work as-is on supported macOS versions, but no bug fixes or
+> feature updates are planned. For port-first workflows, `whport` remains the current
+> option until pstop gains native port-kill support.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)](https://github.com/lu-zhengda/whport)
 [![Homebrew](https://img.shields.io/badge/Homebrew-lu--zhengda/tap-orange.svg)](https://github.com/lu-zhengda/homebrew-tap)
